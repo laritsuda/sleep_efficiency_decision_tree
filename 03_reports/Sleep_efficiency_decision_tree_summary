@@ -1,0 +1,68 @@
+Call:
+rpart(formula = Sleep.efficiency ~ ., data = treino, method = "anova", 
+    control = rpart.control(maxdepth = 2, cp = 0))
+  n= 309 
+
+          CP nsplit rel error    xerror       xstd
+1 0.71340326      0 1.0000000 1.0106346 0.06337509
+2 0.11937863      1 0.2865967 0.2891884 0.01688845
+3 0.02761803      2 0.1672181 0.1699956 0.01663943
+4 0.00000000      3 0.1396001 0.1428218 0.01671955
+
+Variable importance
+Light.sleep.percentage  Deep.sleep.percentage    Alcohol.consumption 
+                    40                     40                      7 
+            Awakenings                    Age         Smoking.status 
+                     7                      4                      2 
+
+Node number 1: 309 observations,    complexity param=0.7134033
+  mean=0.7870874, MSE=0.01802129 
+  left son=2 (80 obs) right son=3 (229 obs)
+  Primary splits:
+      Deep.sleep.percentage  < 45   to the left,  improve=0.7134033, (0 missing)
+      Light.sleep.percentage < 32.5 to the right, improve=0.7134033, (0 missing)
+      Awakenings             < 1.5  to the right, improve=0.3218012, (0 missing)
+      Alcohol.consumption    < 1.5  to the right, improve=0.2482344, (0 missing)
+      Smoking.status         splits as  RL,       improve=0.1278288, (0 missing)
+  Surrogate splits:
+      Light.sleep.percentage < 32.5 to the right, agree=1.000, adj=1.000, (0 split)
+      Alcohol.consumption    < 1.5  to the right, agree=0.786, adj=0.175, (0 split)
+      Age                    < 18.5 to the left,  agree=0.767, adj=0.100, (0 split)
+
+Node number 2: 80 observations,    complexity param=0.02761803
+  mean=0.59525, MSE=0.003709937 
+  left son=4 (47 obs) right son=5 (33 obs)
+  Primary splits:
+      Smoking.status         splits as  RL,       improve=0.51817990, (0 missing)
+      Age                    < 42.5 to the left,  improve=0.16044150, (0 missing)
+      REM.sleep.percentage   < 27.5 to the right, improve=0.12385060, (0 missing)
+      Light.sleep.percentage < 52.5 to the left,  improve=0.02735618, (0 missing)
+      Exercise.frequency     < 0.5  to the right, improve=0.01753429, (0 missing)
+  Surrogate splits:
+      Light.sleep.percentage < 53.5 to the left,  agree=0.688, adj=0.242, (0 split)
+      Deep.sleep.percentage  < 24   to the right, agree=0.675, adj=0.212, (0 split)
+      Age                    < 56.5 to the left,  agree=0.637, adj=0.121, (0 split)
+      Awakenings             < 3.5  to the left,  agree=0.625, adj=0.091, (0 split)
+      Exercise.frequency     < 0.5  to the right, agree=0.613, adj=0.061, (0 split)
+
+Node number 3: 229 observations,    complexity param=0.1193786
+  mean=0.8541048, MSE=0.005673107 
+  left son=6 (73 obs) right son=7 (156 obs)
+  Primary splits:
+      Awakenings           < 1.5  to the right, improve=0.51169890, (0 missing)
+      Exercise.frequency   < 1.5  to the left,  improve=0.05115122, (0 missing)
+      Alcohol.consumption  < 3.5  to the right, improve=0.04822525, (0 missing)
+      REM.sleep.percentage < 26.5 to the left,  improve=0.02991106, (0 missing)
+      Caffeine.consumption < 37.5 to the left,  improve=0.02169771, (0 missing)
+
+Node number 4: 47 observations
+  mean=0.5585106, MSE=0.002633952 
+
+Node number 5: 33 observations
+  mean=0.6475758, MSE=0.0005820018 
+
+Node number 6: 73 observations
+  mean=0.7753425, MSE=0.001696116 
+
+Node number 7: 156 observations
+  mean=0.8909615, MSE=0.003272793 
